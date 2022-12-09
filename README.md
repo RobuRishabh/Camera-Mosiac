@@ -25,18 +25,44 @@ The magnitude of tangential distortion coefficients is smaller than the radial d
 
    Extrinsic Parameter - Camera Centered      |      Extrinsic Parameter - World Centered        |
 :-------------------------:|:------------------------:|
-| <img src="Final Results\Camera Calibration\Extrinsic Parameter - Camera Centered.png" width=600px> | <img src="Final Results\Camera Calibration\Extrinsic Parameter - World Centered.png" width=500px> |
+| <img src="Final Results\Camera Calibration\Extrinsic Parameter - Camera Centered.png" width=500px> | <img src="Final Results\Camera Calibration\Extrinsic Parameter - World Centered.png" width=500px> |
 
 # 2. Image Mosiacing
 
 # 2.1 Mural images on the Latino Students Center building
-<img src="Final Results\LSC_mosiac\LSC_initial.png" width=2000px>
-
+<img src="Final Results\LSC_mosiac\LSC_initial.png" width=1500px>
 
    Harris Detector Sample 1      |      Harris Detector Sample 2        |
 :-------------------------:|:------------------------:|
 | <img src="Final Results\LSC_mosiac\LSC1.png" width=500px> | <img src="Final Results\LSC_mosiac\LSC2.png" width=500px> |
-<img src="Final Results\LSC_mosiac\LSC_final.png" width=2000px>
+<img src="Final Results\LSC_mosiac\LSC_final.png" width=1500px>
+
+# 2.2 Ruggles Mural with 50% Overlapping
+<img src="Final Results\Ruggles50\Ruggles_initial.png" width=1500px>
+
+   Harris Detector Sample 1      |      Harris Detector Sample 2        |
+:-------------------------:|:------------------------:|
+| <img src="Final Results\Ruggles50\R1.png" width=500px> | <img src="Final Results\Ruggles50\R2.png" width=500px> |
+<img src="Final Results\Ruggles50\Ruggles_final.png" width=1500px>
+
+# 2.3 Ruggles Mural with 15% Overlapping
+<img src="Final Results\Ruggles15\RM_initial.png" width=1500px>
+
+   Harris Detector Sample 1      |      Harris Detector Sample 2        |
+:-------------------------:|:------------------------:|
+| <img src="Final Results\Ruggles15\RM1.png" width=500px> | <img src="Final Results\Ruggles15\RM2.png" width=500px> |
+<img src="Final Results\Ruggles15\RM_final.png" width=1500px>
+
+# 2.4 Cinder Wall Mosiac
+<img src="Final Results\Cinder wall\Cinder initial.png" width=1500px>
+
+   Harris Detector Sample 1      |      Harris Detector Sample 2        |
+:-------------------------:|:------------------------:|
+| <img src="Final Results\Cinder wall\Cinder1.png" width=500px> | <img src="Final Results\Cinder wall\Cinder2.png" width=500px> |
+<img src="Final Results\Cinder wall\Cinder Final.png" width=1500px>
+
+
+
 
 
 
