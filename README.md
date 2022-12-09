@@ -25,9 +25,16 @@ The magnitude of tangential distortion coefficients is smaller than the radial d
 
    Extrinsic Parameter - Camera Centered      |      Extrinsic Parameter - World Centered        |
 :-------------------------:|:------------------------:|
-| <img src="Final Results\Camera Calibration\Extrinsic Parameter - Camera Centered.png" width=700px> | <img src="Final Results\Camera Calibration\Extrinsic Parameter - World Centered.png" width=500px> |
+| <img src="Final Results\Camera Calibration\Extrinsic Parameter - Camera Centered.png" width=600px> | <img src="Final Results\Camera Calibration\Extrinsic Parameter - World Centered.png" width=500px> |
 
 # 2. Image Mosiacing
+
+# 2.1 Mural images on the Latino Students Center building
+<img src="Final Results\LSC_mosiac\LSC_initail.png" width=2000px>
+
+                                     |                                                                      |
+:-------------------------:|:------------------------:|
+| <img src="Final Results\LSC_mosiac\LSC1.png" width=500px> | <img src="Final Results\LSC_mosiac\LSC2.png" width=500px> |
 
 
 
