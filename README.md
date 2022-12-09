@@ -32,8 +32,9 @@ The magnitude of tangential distortion coefficients is smaller than the radial d
 # 2.1 Mural images on the Latino Students Center building
 <img src="Final Results\LSC_mosiac\LSC_initial.png" width=2000px>
 
-           Harris Detector sample1                    |           Harris Detector Sample 2                              |
-:----------------------------------------------------:|:---------------------------------------------------------------:|
+
+   Harris Detector Sample 1      |      Harris Detector Sample 2        |
+:-------------------------:|:------------------------:|
 | <img src="Final Results\LSC_mosiac\LSC1.png" width=500px> | <img src="Final Results\LSC_mosiac\LSC2.png" width=500px> |
 <img src="Final Results\LSC_mosiac\LSC_final.png" width=2000px>
 
