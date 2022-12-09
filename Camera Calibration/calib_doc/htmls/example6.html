@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>Camera Calibration Toolbox for Matlab</TITLE>
+<!-- Changed by: Jean-Yves Bouguet, 24-Dec-1999 -->
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (X11; U; SunOS 4.1.3_U1 sun4m) [Netscape]">
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000CC" VLINK="#0000FF" ALINK="#FF0000">
+
+<CENTER>
+<BLOCKQUOTE>&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=5 WIDTH="90%" BGCOLOR="#6A9BED" NOSAVE >
+<TR NOSAVE>
+<TD NOSAVE>
+<CENTER><A NAME="links"></A><I><FONT COLOR="#000000"><FONT SIZE=+4> Camera Calibration Toolbox for Matlab</FONT></FONT></I></CENTER>
+</TD>
+</TR>
+</TABLE>
+&nbsp;</BLOCKQUOTE>
+</CENTER>
+
+
+<H1><IMG SRC="../gifs/starroll.gif" width="20" height="18"> Sixth calibration
+example - Combining two independent calibrations of the same camera</H1>
+
+
+This example gives a quick demonstration of the script <B>merge_two_datasets.m</B> that lets you easily combine two calibration datasets of the same camera created independently.
+<BR><BR>
+Download the two independent calibration datasets <a href="merging_example.zip"><b>merging_example.zip</b></a> (847Kb zipped). This file contains two "Calib_Results.mat" files that corresponds to two independent calibrations of the same camera: <B>Calib_Results_part1.mat</B>, <B>Calib_Results_part2.mat</B>. The objective of this example is to merge the data from both files to achieve more accurate estimates of the intrinsic parameters.
+<BR><BR>
+
+Before merging the two files into a single calibration, inspect the intrinsic parameters computed in both calibration cases by clicking on <B>Show calib results</B> in the main calibration GUI after loading the ".mat" files. <BR><BR> The intrinsic parameters of the first calibration (<B>Calib_Results_part1.mat</B>) should be:
+<BR><BR>
+<align="left"><IMG SRC="../gifs/intrinsic_part1.gif"></align>
+<BR><BR>
+The intrinsic parameters of the second calibration (<B>Calib_Results_part2.mat</B>) should be:
+<BR><BR>
+<align="left"><IMG SRC="../gifs/intrinsic_part2.gif"></align>
+<BR><BR>
+
+Let us now merge the two calibration datasets together. In the main matlab window, run the script <B>merge_two_datasets</B>. 
+<BR><BR>
+<align="left"><IMG SRC="../gifs/merging1.gif"></align>
+<BR><BR>
+Enter the first calibration file name <B>Calib_Results_part1.mat</B> followed by the second calibration filename <B>Calib_Results_part2.mat</B>.
+<BR><BR>
+<align="left"><IMG SRC="../gifs/merging2.gif"></align>
+<BR><BR>
+You are now ready to run a global calibration optimization by clicking on <B>Calibration</B> in the main toolbox GUI window:
+<BR><BR>
+<align="left"><IMG SRC="../gifs/merging3.gif"></align>
+<BR><BR>
+Observe that the uncertainties on the intrinsic parameters are smaller than that of the two independent calibrations.<BR>
+Going further in the analysis of the results, observe that the tangential distortion term is very small (it can be better seen by running the distortion inspection tool <B>visualize_distortions</B>). Therefore, it makes sense to reduce the distortion model by eliminating the tangential term from the optimization:
+<BR><BR>
+<align="left"><IMG SRC="../gifs/merging4.gif"></align>
+<BR><BR>
+Then run calibration on this reduced model:
+<BR><BR>
+<align="left"><IMG SRC="../gifs/merging5.gif"></align>
+<BR><BR>
+The model reduction has further reduced the uncertainties on the intrinsic parameters (especially for the principal point). <BR><BR>
+In order to visualize the extrinsic parameters, you may click on <B>Show Extrinsic</B> in the main GUI window:
+<BR><BR>
+<center><IMG SRC="../gifs/merging7.gif"></center>
+<BR><BR>
+Finally, save the global calibration results under <B>Calib_Results.mat</B> by clicking on <b>Save</B>:
+<BR><BR>
+<align="left"><IMG SRC="../gifs/merging6.gif"></align>
+<BR><BR><BR>
+
+
+<HR>
+
+<P><FONT SIZE=+3><A HREF="../index.html#examples">Back to main calibration page</A></FONT>
+</P>
+
+
+</BODY>
+</HTML>

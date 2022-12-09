@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>Camera Calibration Toolbox for Matlab</TITLE>
+<!-- Changed by: Jean-Yves Bouguet,  9-Jul-1999 -->
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (X11; U; SunOS 4.1.3_U1 sun4m) [Netscape]">
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000CC" VLINK="#0000FF" ALINK="#FF0000">
+
+
+<CENTER>
+<BLOCKQUOTE>&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=5 WIDTH="90%" BGCOLOR="#6A9BED" NOSAVE >
+<TR NOSAVE>
+<TD NOSAVE>
+<CENTER><A NAME="links"></A><I><FONT COLOR="#000000"><FONT SIZE=+4> Camera Calibration Toolbox for Matlab</FONT></FONT></I></CENTER>
+</TD>
+</TR>
+</TABLE>
+&nbsp;</BLOCKQUOTE>
+</CENTER>
+
+
+<H1><IMG SRC="../gifs/starroll.gif" width="20" height="18"> Doing your own calibration</H1>
+
+In order to run your own camera calibration, you need to execute the following preliminary steps:
+
+<ul>
+
+<li><b><font size=+1>Generate the calibration rig:</font></b> Generate
+and print a checkboard pattern. Then paste it on a flat panel.  You
+may want to make the pattern yourself or download our pattern file in
+either <a href="pattern.eps">eps</a> or <a href="pattern.pdf">pdf</a>
+format.  In this pattern, each square is 30mm x 30mm. Yet, after
+printing, the actual printed squares may not be of that size (due to
+distortions induced by the printer).  Therefore, we HIGHLY recommend
+you to measure the X and Y sizes of the printed squares, and use
+those figures during calibration.  To make the program use those
+measured sizes by default, you may want to change the values of the variables
+<b>dX_default</b> and <b>dX_default</b> in the matlab files
+<b>click_calib.m</b> and <b>click_calib_no_read.m</b> (in the <b>TOOLBOX_calib</b> folder).
+This is optional however.
+</li>
+<BR><BR> <li><b><font size=+1>Generate the calibration
+images:</font></b> Acquire any number of images (no maximum number),
+and save them in a common folder in either format: ras, bmp, pgm, ppm,
+tif or jpg.  The image file names must start with a common basename,
+followed by a number (all numbers must be in sequence with step one),
+and the file extension (<b>ras</b>, <b>bmp</b>, <b>pgm</b>,
+<b>ppm</b>, <b>tif</b> or <b>jpg</b>). <BR>
+
+<BR><font size=+1>Example:</font> If 15 tif images are used for calibration, with basename <b>camera_calib</b>, then the file names may be:
+<BR><BR>
+           <b> camera_calib1.tif<BR>
+            camera_calib2.tif<BR>
+            camera_calib3.tif<BR>
+            camera_calib4.tif<BR>
+            camera_calib5.tif<BR>
+            camera_calib6.tif<BR>
+            camera_calib7.tif<BR>
+            camera_calib8.tif<BR>
+            camera_calib9.tif<BR>
+            camera_calib10.tif<BR>
+            camera_calib11.tif<BR>
+            camera_calib12.tif<BR>
+            camera_calib13.tif<BR>
+            camera_calib14.tif<BR>
+            camera_calib15.tif<BR></b>
+
+<BR>
+The first image number may be anything (1, 0 or anything else). We recommend however to use '1' for the first image.
+Another numbering may be used if one chooses to reserve a fixed number of character spaces for the numbers.
+For example, if two fixed slots are reserved in the previous case, the file names become:
+<BR><BR>
+           <b> camera_calib01.tif<BR>
+            camera_calib02.tif<BR>
+            camera_calib03.tif<BR>
+            camera_calib04.tif<BR>
+            camera_calib05.tif<BR>
+            camera_calib06.tif<BR>
+            camera_calib07.tif<BR>
+            camera_calib08.tif<BR>
+            camera_calib09.tif<BR>
+            camera_calib10.tif<BR>
+            camera_calib11.tif<BR>
+            camera_calib12.tif<BR>
+            camera_calib13.tif<BR>
+            camera_calib14.tif<BR>
+            camera_calib15.tif<BR></b>
+
+<BR>
+More slots may be used as well. For example, the following file names would still work:
+<BR><BR>
+           <b> camera_calib0001.tif<BR>
+            camera_calib0002.tif<BR>
+            camera_calib0003.tif<BR>
+            camera_calib0004.tif<BR>
+            camera_calib0005.tif<BR>
+            camera_calib0006.tif<BR>
+            camera_calib0007.tif<BR>
+            camera_calib0008.tif<BR>
+            camera_calib0009.tif<BR>
+            camera_calib0010.tif<BR>
+            camera_calib0011.tif<BR>
+            camera_calib0012.tif<BR>
+            camera_calib0013.tif<BR>
+            camera_calib0014.tif<BR>
+            camera_calib0015.tif<BR></b>
+
+<BR>
+Yet, another valid naming scheme for the 15 calibration images could be:
+<BR><BR>
+           <b> camera_calib00123.tif<BR>
+            camera_calib00124.tif<BR>
+            camera_calib00125.tif<BR>
+            camera_calib00126.tif<BR>
+            camera_calib00126.tif<BR>
+            camera_calib00128.tif<BR>
+            camera_calib00129.tif<BR>
+            camera_calib00130.tif<BR>
+            camera_calib00131.tif<BR>
+            camera_calib00132.tif<BR>
+            camera_calib00133.tif<BR>
+            camera_calib00134.tif<BR>
+            camera_calib00135.tif<BR>
+            camera_calib00136.tif<BR>
+            camera_calib00137.tif<BR></b>
+
+</li>
+<BR><BR>
+<li><b><font size=+1>Calibrate: </font></b> Run the matlab calibration tool as it is presented in the <a href="example.html">first example</a>.
+</li>
+</ul>
+
+
+<BR>
+
+<HR>
+
+<P><FONT SIZE=+3><A HREF="../index.html#own_calib">Back to main calibration page</A></FONT>
+</P>
+
+
+</BODY>
+</HTML>

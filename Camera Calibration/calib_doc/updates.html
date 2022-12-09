@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>Camera Calibration Toolbox for Matlab</TITLE>
+<!-- Changed by: Jean-Yves Bouguet,  2-Jan-2000 -->
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (X11; U; SunOS 4.1.3_U1 sun4m) [Netscape]">
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000CC" VLINK="#0000FF" ALINK="#FF0000">
+
+<CENTER>
+<BLOCKQUOTE>&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=5 WIDTH="90%" BGCOLOR="#6A9BED" NOSAVE >
+<TR NOSAVE>
+<TD NOSAVE>
+<CENTER><A NAME="links"></A><I><FONT COLOR="#000000"><FONT SIZE=+4> Camera Calibration Toolbox for Matlab</FONT></FONT></I></CENTER>
+</TD>
+</TR>
+</TABLE>
+&nbsp;</BLOCKQUOTE>
+</CENTER>
+
+<FONT  size=+2 COLOR="#FF0000">WARNING: This page has not been updated since 2/28/2002 <BR><BR>
+</font>
+<font size=+2>
+Additional (and undocumented) features of the Camera Calibration Toolbox: <BR><BR></FONT>
+<ul>
+
+<li><b>Non-planar calibration rigs:</b> The toolbox works perfectly
+with non-planar calibration rigs. For illustration, check the <a
+href="example3.html">third calibration example</a> posted on the
+main documentation page</li>. 
+
+
+<BR><BR>
+
+<li><b>Robustness of convergence:</b> The convergence algorithm may
+take a few more iterations than shown in the <a
+href="example.html">first example</a>. However, the estimation
+process is now extremely robust, and stable. I have not found any
+example on which the optimization fails. If you do, please send me the
+data!
+
+<BR><BR>
+
+<li><b>Convergence movie:</b> After calibration, the user can visually
+check the convergence of the optimization procedure by running the
+script file <b>check_convergence</b>. This script generates the
+successive intermediate 3D configurations of the calibration rigs
+(extrinsic parameters) computed during the optimization process (the
+variable <b>param_list</b> contains the list of intermediate
+calibration parameters, intrinsic and extrinsic).
+
+
+<BR><BR>
+
+<li><b>Reading images:</b> The process of reading the images from disk
+is now a lot more automatic. The user only has to enter the images basename
+and format. The program automatically finds (and counts) all
+the images with that basename in the selected format and loads
+them. The images should still be consistantly numbered using the
+numbering scheme described on that <a href="own_calib.html">page</a>,
+but all numbers do not have to be consecutive (by step 1) anymore. It
+is perfectly fine is there are missing images. In fact, new images can
+be later on added at the missing slots, for more accurate
+calibration. Try it on example 1 by calibrating with the small set of
+images sparsely picked from the large <a
+href="calib_example/index.html">list of images</a>: <b>Image1.tif</b>,
+<b>Image5.tif</b>, <b>Image9.tif</b>, <b>Image12.tif</b>,
+<b>Image15.tif</b> (the local directory should not contain any other
+image from the list, otherwise, they will be read as well). </li>
+
+<BR><BR>
+
+<li><b>Adding new images:</b> If some number indices were initially
+left unused, then the additional images can now use those unused
+slots. Of course, the new images may still be numbered with higher
+number indices than the current larger number index (like described in
+the <a href="example.html">first example</a>). Only one constraint: do
+not add images before the current first image (i.e. for the new image,
+do not use a lower index number that the index used for the current
+first image). In other words, as you add images, keep the index number
+of the first image identical. If you do not follow that requirement,
+there might be confusion on the correspondence between extracted
+corners, and image indices, and you may have to restart calibration
+from scratch. At any time during calibration, if you want to
+graphically see the current list of images, run the matlab script file
+<b>mosaic</b>.</li>
+
+<BR><BR>
+
+<li><b>No-prompt use:</b> Setting the global variable <b>dont_ask</b>
+to one lets you use the main toolbox functions (optimization +
+graphical display) in script mode without being prompted. This is also
+quite useful for including calibration calls in your own matlab script
+files. To set the toolbox in normal mode again, set <b>dont_ask</b> to
+zero (or clear the variable).  For illustration, check examples <a
+href="example2.html">2</a>, <a href="example3.html">3</a>
+and <a href="example4.html">4</a>.</li>
+
+
+<BR><BR>
+
+<li><b>Exporting calibration data to other formats:</b> There is now a
+tool that allows to export calibration data (image corner locations +
+3D world coordinates) to other formats that are compatible with
+Willson, Heikkilä and Zhang calibration codes. This option is useful
+for comparison purposes. The name of the matlab function is
+<b>export_calib_data.m</b>, and can be launched by clicking on
+<b>Export calib data</b> in the main calibration window.  For more
+information, go to the <a href="example.html">first calibration
+example page</a>.</li>
+
+
+<BR><BR>
+
+<li><b>Converting Calibration results from Reg Willson's format :</b>
+There is now a matlab script file <b>willson_read.m</b> that converts
+the calibration parameters generated by Reg Willson's calibration code
+into our convention.  Visit <a href="parameters.html">page describing
+the parameters</a> for more information.</li>
+
+<BR><BR>
+
+<li><b>Selecting the intrinsic variables to estimate:</b> The user can
+now take some of the camera intrinsic parameters out of the
+optimization. For example, it is possible to reject the principal
+point from the optimization by setting the variable
+<b>center_optim</b> to zero. It is also possible to reject the
+distortion model by setting the variable <b>est_dist</b> to the binary
+vector <b>[0;0;0;0;0]</b>. Other options as possible for the
+distortion model.  For example, setting only the first entry of
+<b>est_dist</b> to one while leaving the other three entrie to zero
+would restrict the optimization to be done using a one parameter
+distortion model (first order radial distortion model). In addtion, it
+is now possible to run the optimization over the skew coefficient
+<b>alpha_c</b> by setting the binary variable <b>est_alpha</b> to
+one. For example, visit the <a href="example.html">first</a> and <a
+href="example2.html">second</a> calibration example pages, and the <a
+href="parameters.html">page describing the calibration parameters</a>.
+</li>
+
+<BR><BR>
+
+<li><b>Now estimatates the Uncertainties:</b> Now, the main
+optimization function <b>go_calib_optim.m</b> returns the
+uncertainties attached to the estimated calibration parameters
+(intrinsic and extrinsic)</li> Look at the function
+<b>go_calib_optim_iter.m</b> for more information.
+
+
+<BR><BR>
+
+<li><b>Stereo calibration:</b> To calibrate a stereo system you may use the stereo calibration
+script <B>calib_stereo.m</B>. This script is not documented here, but a lot of information can be retrieved by typing <b>help calib_stereo</B> in the main Matlab window. Many users have successfully used it.
+
+
+
+</ul>
+
+<BR>
+
+<!--
+If you have any questions (bug report...), do not hesitate to email me
+at <A
+HREF="mailto:jean-yves.bouguet@intel.com">jean-yves.bouguet@intel.com</A>. Any
+suggestion for improvement is more than welcome.
+-->
+
+<HR>
+
+<P><FONT SIZE=+3><A HREF="../index.html#updates">Back to main calibration page</A></FONT>
+</P>
+
+
+
+</BODY>
+</HTML>

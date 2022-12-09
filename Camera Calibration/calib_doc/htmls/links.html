@@ -1,0 +1,380 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>Camera Calibration Toolbox for Matlab</TITLE>
+<!-- Changed by: Jean-Yves Bouguet, 24-Dec-1999 -->
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (X11; U; SunOS 4.1.3_U1 sun4m) [Netscape]">
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000CC" VLINK="#0000FF" ALINK="#FF0000">
+
+<CENTER>
+<BLOCKQUOTE>&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=5 WIDTH="90%" BGCOLOR="#6A9BED" NOSAVE >
+<TR NOSAVE>
+<TD NOSAVE>
+<CENTER><A NAME="links"></A><I><FONT COLOR="#000000"><FONT SIZE=+4>
+Camera Calibration Toolbox for Matlab</FONT></FONT></I></CENTER>
+</TD>
+</TR>
+</TABLE>
+&nbsp;</BLOCKQUOTE>
+</CENTER>
+
+
+<H1><IMG SRC="../gifs/starroll.gif" width="20" height="18"> A few links related to camera calibration</H1>
+
+
+<ul>
+
+<li><a
+href="http://docs.opencv.org/trunk/doc/tutorials/calib3d/camera_calibration/camera_calibration.html#">Camera calibration With OpenCV</a> - The same calibration toolbox as this one, in OpenCV.</li>
+
+<BR><BR>
+
+
+<li><a
+href="http://www.ee.oulu.fi/~jkannala/publications/tpami2006.pdf">A Generic Camera Model and Calibration Method for Conventional, Wide-Angle, and Fish-Eye Lenses</a> - The "undocumented" fisheye model contained in the calibration toolbox follows the equidistance projection model described by equation (3) in this very nice paper. The distortion model follows equation (6), to the exception that k1=1 (otherwise indistinguishable from f).</li>
+
+<BR><BR>
+
+<li><a
+href="http://www.robotic.dlr.de/callab">A Camera
+Calibration Toolbox from the Institute of Robotics and Mechatronics,
+Germany</a> - DLR CalDe and DLR CalLab is a very complete tool for camera calibration (including
+corner extraction). The tool just became freely
+available for download (for non-commercial purposes only). Authors: <a href="http://www.robotic.dlr.de/Klaus.Strobl">Klaus Strobl</a>, <a href="http://www.robotic.dlr.de/Wolfgang.Sepp">Wolfgang Sepp</a>, Stefan Fuchs, Cristian Paredes and Klaus Arbter from the Institute of Robotics and Mechatronics.</li>
+
+<BR><BR>
+
+<li><a href="http://www.vision.ee.ethz.ch/~cwengert/calibration_toolbox.php">A fully automatic camera and hand eye calibration</a> developed by Christian Wengert from the Swiss Federal Institute of Technology (ETHZ). This is two add-ons for this camera calibration toolbox for Matlab. The first part covers a fully automatic calibration procedure and the second covers the calibration of the camera to a robot-arm or an external marker (known as Hand-Eye claibration). The author provides a complete documentation.</li>
+
+<br><br>
+
+<li><a href="http://ubimon.doc.ic.ac.uk/dvs/index.php?m=581">A Standalone camera calibration application</a> developed by <a href="http://ubimon.doc.ic.ac.uk/dvs/index.php?m=480">Danail Stoyanov</a> from the Royal Society/Wolfson Foundation Medical Image Computing Laboratory, Imperial College London, United Kingdom. This application was inspired by this Camera Calibration Toolbox for Matlab. It come with a very nice user interface, and is standalone! A great tool! Thank you Danial for this making this application available to the general community.</li>
+
+<br><br>
+
+
+<li><a href="http://asl.epfl.ch/~scaramuz/research/Davide_Scaramuzza_files/Research/OcamCalib_Tutorial.htm">Omnidirectional Camera Calibration Toolbox for Matlab</a> - A complete toolbox for calibrating omnidirectional cameras. The author <a href="http://asl.epfl.ch/~scaramuz/research/Davide_Scaramuzza.htm">Davide Scaramuzza</a> is at the Swiss Federal Institute of Technology Lausanne (EPFL), Switzerland.
+</li>
+
+<br><br>
+
+<li><a href="https://sites.google.com/site/prclibo/toolbox">Multiple Camera Calibration Toolbox</a> - A Multiple-Camera System Calibration Toolbox Using A Feature Descriptor-Based Calibration Pattern. Authors: Bo Li, Lionel Heng, Kevin Koeser and <a href="http://www.inf.ethz.ch/personal/pomarc/">Marc Pollefeys</a>, Computer Vision and Geometry Group, ETH Zurich.
+</li>
+
+<br><br>
+
+
+<li><a href="http://www-sop.inria.fr/icare/personnel/Christopher.Mei/ChristopherMeiPhDStudentToolbox.html">Omnidirectional Calibration Toolbox Extension</a> - A great extension toolbox for calibrating omnidirectional cameras. The author <a href="http://www-sop.inria.fr/icare/personnel/Christopher.Mei/index.html">Christopher Mei</a> wrote a very complete documentation, with examples. It also contain C programs for undistorting images, and reading the results of calibration. It is a wonderful addition to this Camera Calibration Toolbox. Check it out!
+</li>
+
+<br><br>
+
+<li><a href="http://graphics.cs.msu.su/en/research/calibration/index.html">OpenCV and MatLab Camera Calibration Toolboxes Enhancement</a> - A set of matlab and C code that adds an automatic
+corner detection to the Matlab Calibration Toolbox. The author, Vladimir Vezhnevets, also offers new enhancements to the OpenCV version of the calibration tool (a more robust corner detection). A complete C++ standalone application may also be found at this <a href="http://research.graphicon.ru/calibration/gml-c++-camera-calibration-toolbox.html">location</a>. It is a remarkable tool.
+</li>
+
+<BR><BR>
+
+<li><a href="http://www.ee.oulu.fi/~jth/calibr/">Camera calibration
+toolbox on matlab from the University of Oulu, Finland (Janne Heikkil�
+and Olli Silven)</a> - A reference in camera
+calibration. Unfortunately, the code does not include corner
+extraction. We used their intrinsic camera model in that present
+implementation.  </li>
+
+<BR><BR>
+
+<li><a href="http://research.microsoft.com/~zhang/Calib/">A Flexible
+New Technique for Camera Calibration - Zhengyou Zhang - Microsoft
+Research </a> - Great work on calibration. A must see. Our
+toolbox has been greatly inspired from this work. The software is
+available online, however, it does not include corner extraction.
+</li>
+
+<BR><BR> <li><a
+href="http://www-cgi.cs.cmu.edu/afs/cs.cmu.edu/user/rgw/www/TsaiCode.html">Tsai
+Camera Calibration Software</a> - A classic! Everyone interested in
+camera calibration should know about that link. No image corner extraction
+included.  </li>
+
+
+<BR><BR>
+
+<li><a href="http://www.cs.cmu.edu/~rgw/">Reg Willson's Home Page at
+CMU</a> - A reference page on zoom lens modeling, calibration... Also
+links to <a
+href="http://www-cgi.cs.cmu.edu/afs/cs.cmu.edu/user/rgw/www/TsaiCode.html">Tsai</a>
+code that he is maintaining. A very useful link to keep.  </li>
+
+<BR><BR>
+
+
+<li><a href="http://terezka.ufa.cas.cz/hynek/toolbox.html">Camera
+calibration toolbox for matlab from Hynek Bakstein and Radim Halir</a>
+- A quite good camera calibration toolbox for matlab. Unfortunately,
+the code does not include image corner extraction. This page also
+contains the thesis of Hynek Bakstein on Camera Calibration. </li>
+
+<!-- <BR><BR>
+
+<li><a
+href="http://graphics.cs.msu.su/en/research/calibration/index.html">OpenCV
+and Matlab Calibration Toolboxes Enhancement </a> - The author
+Vladimir Vezhnevets wrote an impressive set of functions that
+enhance the Matlab and C versions of the Calibration Toolbox.
+ </li>
+ -->
+
+<BR><BR>
+
+<li><a href="http://graphics.stanford.edu/~jedavis/projects/tclcalib/">tclcalib - A tool for camera calibration</A> - A collection of tools all wrapped up together in order to make internal camera calibration easy. Heikkila's internal camera model is the one used in this toolbox. Written by <a href="http://graphics.stanford.edu/~jedavis/">James Davies</A> at Stanford.  </li>
+
+
+<BR><BR>
+
+
+<li><a href="http://cmp.felk.cvut.cz/~svoboda/SelfCal/index.html">The
+Multi-Camera Self-Calibration Toolbox</A> - This is a complete
+Matlab toolbox for calibrating multiple cameras. This toolbox is
+freely available for non-commercial use, and includes our Camera
+Calibration Toolbox. The author of this very nice tool is <a
+href="http://cmp.felk.cvut.cz/~svoboda/">Tomas Svoboda</a>
+from the <a href="http://cmp.felk.cvut.cz/">Center for Machine Perception</a> of the <a href="http://www.cvut.cz/cz/">Czech Technical University</a>.</li>
+
+
+<BR><BR>
+
+<li><a
+href="http://www.cis.upenn.edu/teleimmersion/research/downloads/EasyCal/">EasyCal:
+A toolbox for calibrating clusters of cameras</A> - This is a
+complete Matlab and C toolbox for calibrating a large cluster of
+cameras without the need to click on multiple images. This
+toolbox is freely available for non-commercial use, and includes
+our Camera Calibration Toolbox. The authors of this tool are Joao
+P. Barreto, Kostas Daniilidis, Nikhil Kelshikar, Rana Molana and
+Xenophon Zabulis from the <a
+href="http://www.cis.upenn.edu/~sequence/index.html">Computer and
+Information Science Department</a> of the <a
+href="http://www.upenn.edu/">University of Pennsylvania.</li>
+
+
+<BR><BR> <li><a
+href="http://www.optical-metrology-centre.com/">The Optical
+Metrology Centre</A> - Among other things, this company based in
+the UK offers <A
+href="http://www.optical-metrology-centre.com/services_camera_calibration.htm">camera
+calibration sevices</A> and sells a complete <A
+href="http://www.optical-metrology-centre.com/products_camera_calibration_software.htm">camera
+calibration software</A>. I recommend reading the <a
+href="http://www.optical-metrology-centre.com/Downloads/Products/ProdGuide_CamCal.pdf">software
+brochure</A>   and the <A
+href="http://www.optical-metrology-centre.com/Downloads/Tech_Briefs/TechBrief_CamCal.pdf">technical
+brief</A> where useful information about camera calibration may
+be found. In addition, a large body of <A
+href="http://www.optical-metrology-centre.com/research_papers.htm">technical
+publications</A> may also be found on their web site. This
+company is also mentioned on the <A href="ref.html">reference
+page</A>.</li>
+
+<BR><BR>
+<!--
+<li><a
+href="http://www.inrialpes.fr/movi/soft/calibration/index.html">Tele2:
+A complete Calibration Toolkit with additional Computional Vision
+tools</A> - A great camera calibration software (with complete
+documentation) for Linux that allows calibrating of single
+cameras, and stereo systems. This software also contains various
+other computational vision tools such as stereo matching, and 3D
+shape computation. Written by Matthieu Personnaz at INRIA. </li>
+
+<BR><BR>
+
+-->
+
+<li><a
+href="http://www.barbaresi.net/Frame/Research/CenterResearchFrame.htm">An
+algorithm for automatic corner extraction</a> - This page
+describes an algorithm by <a
+href="http://www.barbaresi.net">Abramo Barbaresi</a> to
+automatically detect the complete set of corners in a
+checkerboard image. This tool is useful for automatizing the
+overall calibration procedure. </li>
+
+<BR><BR>
+
+
+<li><a href="http://www.ai.mit.edu/people/gideon/gideon.html">Gideon P. Stein's
+Personal Page at MIT (AI Lab)</a> - Very good work on 3D
+reconstruction and calibration by Gideon Stein. A very good overview of lens
+distortion models. A good link to keep.  </li>
+
+<BR><BR>
+
+
+<li><a href="../papers/Distorsion_QM_work.pdf">Rapport de mesure de distorsion geometrique des cameras CIVA-P QM [585Kb PDF, in French]</A>, by Nicolas Charvin and Alain Soufflot from the <a href="http://www.ias.fr/">Institut d'Astrophysique Spatiale</A>. This report is a exhaustive analysis of geometrique distortions of a stereo camera system. The authors used the toolbox to run the analysis. An excellent report.  </li>
+
+<BR><BR>
+
+<li><a
+href="http://www.nas.nasa.gov/Research/Reports/Techreports/1999/nas-99-003-abstract.html">A
+Method to Solve Interior and Exterior Camera Calibration Parameters
+for Image Resection</a> - A project done at NASA on iterative method
+for calibration. Observe that the camera model used in that report is
+identical to ours, and the iterative method is also identical (based
+on Newton-Raphson). An interesting report.</li>
+
+<BR><BR>
+
+<!--
+
+<li><a
+href="http://www.vision.irl.cri.nz/research/videometrics/publications.html">Computer
+vision research at the Industrial Research Limited (New Zealand)</a> -
+A large body of work on calibration of cameras, structured lighting
+systems, ... A very interesting number of research papers.  A must
+see. <a
+href="http://www.vision.irl.cri.nz/~alan/publications.html">Alternative
+download location</a>.</li>
+
+<BR><BR>
+
+
+<li><a
+href="http://www.eng.warwick.ac.uk/pmg/subpagesoftware.html">The
+Photogrammetric Measurement Group (PMG) at the University of
+WARWICK</a> - An excellent description of the calibration method
+coming from Zhang and Heikkila, and our toolbox.  They also designed a
+set of excellent pages covering many other topics related to
+photogrammetry. A must see.</li>
+
+<BR><BR>
+
+
+<li><a
+href="http://www-syntim.inria.fr/syntim/research/tarel/">Jean-Philippe
+Tarel's home page</a> - A lot of interesting work on Camera
+calibration, stereo, 3D modeling... Visit also his camera calibration
+software page: <a
+href="http://www-syntim.inria.fr/syntim/textes/RT-0196-tarel-eng.html">Camcal
+v1..0</a>. </li>
+
+<BR><BR>
+
+-->
+
+<li><a
+href="http://www-sop.inria.fr/robotvis/personnel/sbougnou/TotalCalib/">TotalCalib
+software (Sylvain Bougnoux) </a> - Very powerful semi-automatic camera
+calibration tool based on image point correspondence (also known as
+self-calibration) - Designed at INRIA. Unfortunately, the software is
+not freely available (or so it seems).  </li>
+
+<BR><BR>
+
+
+<li><a href="http://isb.ri.ccf.org/software/movanal.html">Links to the
+DLT method for calibration</a> - A good source of information about
+the DLT method for camera calibration.  </li>
+
+<BR><BR>
+
+
+<li><a
+href="http://www.cat.csiro.au/cmst/staff/pic/vision-tb.html">Machine
+Vision Toolbox for matlab</a> - A large collection of matlab routines
+for machine vision applications, including camera calibration. I have
+not tried this toolbox.  </li>
+
+<BR><BR>
+
+<!--
+<li><a
+href="http://www.imaging.com/producttour/sherlock/sherlock.html">Sherlock32
+: Free Machine Vision Software </a>- An interesting machine vision
+software (not free). I have not tried it.  </li>
+
+<BR><BR>
+-->
+
+<li><a
+href="http://www-sop.inria.fr/robotvis/personnel/lucr/detecproj.html">Camera
+Calibration Without Feature Extraction (Luc Robert)</a> - Very
+interesting research on camera calibration.  </li>
+<!--
+<BR><BR>
+
+<li><a
+href="http://www.dai.ed.ac.uk/daidb/staff/personal_pages/rbf/CVonline/sysmod.htm">CVonline:
+System Models, Calibration and Parameter Estimation</a> - A major
+reference on calibration, and computer vision in general. Visit the
+main <a
+href="http://homepages.inf.ed.ac.uk/rbf/CVonline/">CVonline</a>
+page as well.  </li>
+
+<BR><BR>
+-->
+
+<li><a
+href="http://velox.stanford.edu/~wilburn/Calibration/report.html">Automatic
+Feature Point Extraction for Light Field Camera Calibration - Project
+Report - Bennett Wilburn - Stanford</a> - An interesting project on
+calibration. Take a look. </li>
+
+<BR><BR>
+
+<li><a
+href="http://www.media.mit.edu/~sbeck/results/Distortion/distortion.html">Semiautomatic
+Camera Lens Calibration from Partially known structure</a> - A project
+done at the MIT media labs that uses the same camera model as we are
+to undistort images. </li>
+
+
+<BR><BR>
+
+<li><a
+href="http://www.kinetic.bc.ca/CompVision/opti-CAL.html">Kinetic
+Sciences Inc. (KSI) - Opti-CAL camera calibration package</a> - A
+complete camera calibration package for Machintosh. Not free! </li>
+
+
+<BR><BR>
+
+<li><a href="http://www.mvtec.de/halcon/">MVTec HALCON - The Software
+Solution for Machine Vision Applications</a> - A machine vision
+package providing a number of tools, including camera calibration. Not
+free!</li>
+
+
+
+
+
+<BR><BR>
+
+<li><a
+href="http://www.cs.uwa.edu.au/~pk/Research/MatlabFns/">MATLAB Functions for Computer Vision and Image Analysis</a> - A very useful collection of great computer vision and image processing function in matlab by <a
+href="http://www.cs.uwa.edu.au/~pk/">Prof. Peter Kovesi</a> from <A href="http://www.cs.uwa.edu.au/">the University of Western Australia</A>.</li>
+<BR><BR>
+
+<li><a
+href="http://www-2.cs.cmu.edu/~cdima/links.html">Very useful set of links on Computer Vision and Machine Learning</a> - This page is maintained by <A href="http://www-2.cs.cmu.edu/~cdima/">Cristian Dima</A> from <a href="http://www.cs.cmu.edu/">CMU</A>.</li>
+
+
+
+
+</ul>
+
+<BR>
+I try to keep updating this page regularly, as I discover new interesting pages related to the topic of camera calibration. However, the web is large and dynamic, and I rely on elementary search engines to find new links. Therefore, I encourage you to directly contribute with your (or someone else's) link by sending me an email at jbouguet at gmail dot com. Thank you.
+<BR>
+<BR>
+
+<HR>
+
+<P><FONT SIZE=+3><A HREF="../index.html#links">Back to main calibration page</A></FONT>
+</P>
+
+
+</BODY>
+</HTML>

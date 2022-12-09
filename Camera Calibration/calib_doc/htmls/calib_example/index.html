@@ -1,0 +1,380 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>Camera Calibration Toolbox for Matlab</TITLE>
+<!-- Changed by: Jean-Yves Bouguet, 26-Dec-1999 -->
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (X11; U; SunOS 4.1.3_U1 sun4m) [Netscape]">
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000CC" VLINK="#0000FF" ALINK="#FF0000">
+
+<CENTER>
+<BLOCKQUOTE>&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=0 WIDTH="90%" BGCOLOR="#6A9BED" NOSAVE >
+<TR NOSAVE>
+<TD NOSAVE>
+<CENTER><A NAME="links"></A><I><FONT COLOR="#000000"><FONT SIZE=+4> Camera Calibration Toolbox for Matlab</FONT></FONT></I></CENTER>
+</TD>
+</TR>
+</TABLE>
+&nbsp;</BLOCKQUOTE>
+</CENTER>
+
+
+<font size=+2><B>Download of the calibration images of the first example:</B></font><BR><BR>
+
+<!-- <font size=+1>You may download the calibration images all at once (<a href="../calib_example.tgz">calib_example.tgz</a> (4461Kb gzipped) or <a href="../calib_example.tar">calib_example.tar</a> (6096Kb tar)), or individually by clicking on them:
+</font> 
+<BR>
+<BR>-->
+
+
+<center>
+<table>
+
+<tr>
+
+<td>
+<center>
+<table>
+<tr>
+<td>
+<center><a href = "Image1.tif"><IMG SRC="Image1s.gif" width="160" height="120"></a></center>
+</td>
+</tr>
+<td>
+<center><font size=+1><a href = "Image1.tif">Image1.tif</a></font></center>
+</td>
+</tr>
+</table>
+</center>
+</td>
+
+<td>
+<center>
+<table>
+<tr>
+<td>
+<center><a href = "Image2.tif"><IMG SRC="Image2s.gif" width="160" height="120"></a></center>
+</td>
+</tr>
+<td>
+<center><font size=+1><a href = "Image2.tif">Image2.tif</a></font></center>
+</td>
+</tr>
+</table>
+</center>
+</td>
+<td>
+<center>
+<table>
+<tr>
+<td>
+<center><a href = "Image3.tif"><IMG SRC="Image3s.gif" width="160" height="120"></a></center>
+</td>
+</tr>
+<td>
+<center><font size=+1><a href = "Image3.tif">Image3.tif</a></font></center>
+</td>
+</tr>
+</table>
+</center>
+</td>
+
+<td>
+<center>
+<table>
+<tr>
+<td>
+<center><a href = "Image4.tif"><IMG SRC="Image4s.gif" width="160" height="120"></a></center>
+</td>
+</tr>
+<td>
+<center><font size=+1><a href = "Image4.tif">Image4.tif</a></font></center>
+</td>
+</tr>
+</table>
+</center>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<center>
+<table>
+<tr>
+<td>
+<center><a href = "Image5.tif"><IMG SRC="Image5s.gif" width="160" height="120"></a></center>
+</td>
+</tr>
+<td>
+<center><font size=+1><a href = "Image5.tif">Image5.tif</a></font></center>
+</td>
+</tr>
+</table>
+</center>
+</td>
+
+<td>
+<center>
+<table>
+<tr>
+<td>
+<center><a href = "Image6.tif"><IMG SRC="Image6s.gif" width="160" height="120"></a></center>
+</td>
+</tr>
+<td>
+<center><font size=+1><a href = "Image6.tif">Image6.tif</a></font></center>
+</td>
+</tr>
+</table>
+</center>
+</td>
+<td>
+<center>
+<table>
+<tr>
+<td>
+<center><a href = "Image7.tif"><IMG SRC="Image7s.gif" width="160" height="120"></a></center>
+</td>
+</tr>
+<td>
+<center><font size=+1><a href = "Image7.tif">Image7.tif</a></font></center>
+</td>
+</tr>
+</table>
+</center>
+</td>
+
+<td>
+<center>
+<table>
+<tr>
+<td>
+<center><a href = "Image8.tif"><IMG SRC="Image8s.gif" width="160" height="120"></a></center>
+</td>
+</tr>
+<td>
+<center><font size=+1><a href = "Image8.tif">Image8.tif</a></font></center>
+</td>
+</tr>
+</table>
+</center>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<center>
+<table>
+<tr>
+<td>
+<center><a href = "Image9.tif"><IMG SRC="Image9s.gif" width="160" height="120"></a></center>
+</td>
+</tr>
+<td>
+<center><font size=+1><a href = "Image9.tif">Image9.tif</a></font></center>
+</td>
+</tr>
+</table>
+</center>
+</td>
+
+<td>
+<center>
+<table>
+<tr>
+<td>
+<center><a href = "Image10.tif"><IMG SRC="Image10s.gif" width="160" height="120"></a></center>
+</td>
+</tr>
+<td>
+<center><font size=+1><a href = "Image10.tif">Image10.tif</a></font></center>
+</td>
+</tr>
+</table>
+</center>
+</td>
+<td>
+<center>
+<table>
+<tr>
+<td>
+<center><a href = "Image11.tif"><IMG SRC="Image11s.gif" width="160" height="120"></a></center>
+</td>
+</tr>
+<td>
+<center><font size=+1><a href = "Image11.tif">Image11.tif</a></font></center>
+</td>
+</tr>
+</table>
+</center>
+</td>
+
+<td>
+<center>
+<table>
+<tr>
+<td>
+<center><a href = "Image12.tif"><IMG SRC="Image12s.gif" width="160" height="120"></a></center>
+</td>
+</tr>
+<td>
+<center><font size=+1><a href = "Image12.tif">Image12.tif</a></font></center>
+</td>
+</tr>
+</table>
+</center>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<center>
+<table>
+<tr>
+<td>
+<center><a href = "Image13.tif"><IMG SRC="Image13s.gif" width="160" height="120"></a></center>
+</td>
+</tr>
+<td>
+<center><font size=+1><a href = "Image13.tif">Image13.tif</a></font></center>
+</td>
+</tr>
+</table>
+</center>
+</td>
+
+<td>
+<center>
+<table>
+<tr>
+<td>
+<center><a href = "Image14.tif"><IMG SRC="Image14s.gif" width="160" height="120"></a></center>
+</td>
+</tr>
+<td>
+<center><font size=+1><a href = "Image14.tif">Image14.tif</a></font></center>
+</td>
+</tr>
+</table>
+</center>
+</td>
+<td>
+<center>
+<table>
+<tr>
+<td>
+<center><a href = "Image15.tif"><IMG SRC="Image15s.gif" width="160" height="120"></a></center>
+</td>
+</tr>
+<td>
+<center><font size=+1><a href = "Image15.tif">Image15.tif</a></font></center>
+</td>
+</tr>
+</table>
+</center>
+</td>
+
+<td>
+<center>
+<table>
+<tr>
+<td>
+<center><a href = "Image16.tif"><IMG SRC="Image16s.gif" width="160" height="120"></a></center>
+</td>
+</tr>
+<td>
+<center><font size=+1><a href = "Image16.tif">Image16.tif</a></font></center>
+</td>
+</tr>
+</table>
+</center>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<center>
+<table>
+<tr>
+<td>
+<center><a href = "Image17.tif"><IMG SRC="Image17s.gif" width="160" height="120"></a></center>
+</td>
+</tr>
+<td>
+<center><font size=+1><a href = "Image17.tif">Image17.tif</a></font></center>
+</td>
+</tr>
+</table>
+</center>
+</td>
+
+<td>
+<center>
+<table>
+<tr>
+<td>
+<center><a href = "Image18.tif"><IMG SRC="Image18s.gif" width="160" height="120"></a></center>
+</td>
+</tr>
+<td>
+<center><font size=+1><a href = "Image18.tif">Image18.tif</a></font></center>
+</td>
+</tr>
+</table>
+</center>
+</td>
+<td>
+<center>
+<table>
+<tr>
+<td>
+<center><a href = "Image19.tif"><IMG SRC="Image19s.gif" width="160" height="120"></a></center>
+</td>
+</tr>
+<td>
+<center><font size=+1><a href = "Image19.tif">Image19.tif</a></font></center>
+</td>
+</tr>
+</table>
+</center>
+</td>
+
+<td>
+<center>
+<table>
+<tr>
+<td>
+<center><a href = "Image20.tif"><IMG SRC="Image20s.gif" width="160" height="120"></a></center>
+</td>
+</tr>
+<td>
+<center><font size=+1><a href = "Image20.tif">Image20.tif</a></font></center>
+</td>
+</tr>
+</table>
+</center>
+</td>
+
+</tr>
+
+
+</table>
+</center>
+
+<HR>
+
+<P><FONT SIZE=+3><A HREF="../example.html">Back to first calibration example page</A></FONT>
+</P>
+
+
+</BODY>
+</HTML>

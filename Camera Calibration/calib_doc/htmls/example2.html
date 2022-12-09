@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>Camera Calibration Toolbox for Matlab</TITLE>
+<!-- Changed by: Jean-Yves Bouguet, 24-Dec-1999 -->
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (X11; U; SunOS 4.1.3_U1 sun4m) [Netscape]">
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000CC" VLINK="#0000FF" ALINK="#FF0000">
+
+<CENTER>
+<BLOCKQUOTE>&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=5 WIDTH="90%" BGCOLOR="#6A9BED" NOSAVE >
+<TR NOSAVE>
+<TD NOSAVE>
+<CENTER><A NAME="links"></A><I><FONT COLOR="#000000"><FONT SIZE=+4> Camera Calibration Toolbox for Matlab</FONT></FONT></I></CENTER>
+</TD>
+</TR>
+</TABLE>
+&nbsp;</BLOCKQUOTE>
+</CENTER>
+
+
+<H1><IMG SRC="../gifs/starroll.gif" width="20" height="18"> Second calibration example - Calibration using Zhengyou Zhang's data</H1>
+
+The <a href="example.html">previous example</a> showed you how to run
+calibration from raw images. It is worth noticing that our toolbox may
+also be used in case where some calibration data have been previously
+computed. As an illustration, let us use our calibration engine on <a
+href="http://research.microsoft.com/users/zhang/">Zhengyou Zhang</a>'s
+calibration data that he made available on his <a
+href="http://www.research.microsoft.com/~zhang/Calib/">calibration
+page</a> at Microsoft Research. Do not bother downloading the data
+from there, we have it all ready for you right here just one mouse
+click away: <a href="zhang_data.zip"><b>zhang_data.zip</b></a> (621Kb
+zipped). After download, retrieve all the files present in the
+package in a directory called <b>zhang_data</b> (this should be
+automatic). This directory contains the original calibration images
+(five of them) used by Zhang (in <b>tif</b> format), together with the
+planar calibration rig model and the extracted corner coordinate files
+that Zhengyou Zhang distributes on his <a
+href="http://www.research.microsoft.com/~zhang/Calib/">web page</a>.
+In addition, you will find a small matlab script file called
+<b>demo_script.m</b>.<BR> Under Matlab, run that script file
+<b>demo_script.m</b>. This script converts all Zhang's data into my
+calibration format, reads in the images, runs through the main
+calibration engine, shows the results (intrinsic + extrinsic), and
+saves them under a file called <b>Calib_Results.mat</b>. This small
+script demonstrates that our calibration toolbox may easily be used in
+cases where some data have already been extracted (in this case, the
+corner coordinates). Observe that setting the variable <b>dont_ask</b>
+to one lets you use the main toolbox functions (optimization +
+graphical display) in script mode without being prompted. This is also
+quite useful for including calibration calls in your own matlab script
+files. In this present example, compare our calibration results
+(<b>fc</b>, <b>cc</b>, <b>kc</b>, <b>Rc_1</b>, <b>Tc_1</b>,
+<b>Rc_2</b>, <b>Tc_2</b>, ... , <b>Rc_5</b>, <b>Tc_5</b>) with <a
+href="http://research.microsoft.com/users/zhang/Calib/Calibration/Calib.txt">Zhang's</a>.
+Quite similar no? (observe that our distortion model includes two
+additional terms accounting for tangential distortion. The other terms
+are defined in the exact same way. For more information, visit the <a
+href ="parameters.html">page describing the calibration
+parameters</a>.  <BR><BR> Once the script is finished running, we may
+want to try to include the skew coefficient <b>alpha_c</b> in the
+optimization. For that purpose, set the binary variable
+<b>est_alpha</b> to <b>1</b> (<b>est_alpha = 1</b>), and click on
+<b>Calibration</b>. Observe that the final computed skew coefficient
+<b>alpha_c</b> is very close to zero (i.e. pixels are
+rectangular). For more information, visit the <a href
+="parameters.html">page describing the calibration parameters</a>.
+ 
+<BR><BR> As a final ultimate comparison, you may want to run the
+estimation is the exact same configuration as Zhang. For that, disable
+the tangential distortion part of the model and limit the radial
+distortion model up to the 4<sup>th</sup> degree (<b>est_dist =
+[1;1;0;0;0]</b>), and activate the skew estimation (<b>est_alpha =
+1</b>).  After calibration, you should observe that our results are
+exactly the same as <a
+href="http://research.microsoft.com/users/zhang/Calib/Calibration/Calib.txt">Zhang's</a>. To
+compare skew estimation, look at the camera matrix <b>KK</b>. Zhang's
+skew coefficient is defined as <b>fc(1)*alpha_c</b>, which is the
+(1,2) entry of the camera matrix <b>KK</b>. For more information,
+visit the <a href ="parameters.html">page describing the calibration
+parameters</a>.
+
+
+<BR><BR> You may also try to re-extract the square corners on the calibration
+images, by clicking on <b>Recomp. corners</b>.  Select all the images,
+the window size of your choice (for example <b>wintx = 6</b>,<b>winty
+= 6</b>), and the automatic mode (required here). Then run calibration
+again, and compare the results. As a general advice, we recommend NOT
+to use such a pattern for calibration (disjoint squares generating
+asymmetric corner features) . It is better to use symmetric corner
+features such as the corners of a checkerboard pattern (the pattern
+used in the <a href="example.html">first example</a>). To retrieve
+that pattern, visit that <a href ="own_calib.html">link</a>. <BR> <BR>
+<BR>
+
+
+<HR>
+
+<P><FONT SIZE=+3><A HREF="../index.html#examples">Back to main calibration page</A></FONT>
+</P>
+
+
+</BODY>
+</HTML>

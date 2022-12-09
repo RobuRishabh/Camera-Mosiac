@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>Camera Calibration Toolbox for Matlab</TITLE>
+<!-- Changed by: Jean-Yves Bouguet, 24-Dec-1999 -->
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (X11; U; SunOS 4.1.3_U1 sun4m) [Netscape]">
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000CC" VLINK="#0000FF" ALINK="#FF0000">
+
+<CENTER>
+<BLOCKQUOTE>&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=5 WIDTH="90%" BGCOLOR="#6A9BED" NOSAVE >
+<TR NOSAVE>
+<TD NOSAVE>
+<CENTER><A NAME="links"></A><I><FONT COLOR="#000000"><FONT SIZE=+4> Camera Calibration Toolbox for Matlab</FONT></FONT></I></CENTER>
+</TD>
+</TR>
+</TABLE>
+&nbsp;</BLOCKQUOTE>
+</CENTER>
+
+
+<H1><IMG SRC="../gifs/starroll.gif" width="20" height="18"> References</H1>
+
+
+<ul>
+
+<li><b><font size=+1>Flexible Camera Calibration by Viewing a Plane
+from Unknown Orientations - </font></b> Zhang, ICCV99, <a
+href="../papers/zhan99.pdf">paper (803KB)</a>.  <BR><BR>The main initialization
+phase has been partially inspired from that paper. The initial
+estimation of the planar homographies is identical to that presented
+in that paper. The closed-form estimation of the internal parameters
+from the homographies is slightly different (we explicitely use
+orthogonality of vanishing points), and we do not estimate the
+distortion coefficients at the initialization phase (we found that
+step unnecessary in practice). The final Maximum Likelihood estimation
+is identical.  Minor difference: we use the intrinsic model presented
+by Heikkilä and Silven including two extra distortion coefficients
+corresponding to tangential distortion.
+
+
+</li>
+
+<BR><BR><BR>
+
+<li><b><font size=+1>A Four-step Camera Calibration Procedure with
+Implicit Image Correction - </font></b> Heikkilä and Silven, CVPR97,
+<a href="../papers/heikkila97.pdf">paper (125KB)</a>.  <BR><BR>The intrinsic
+camera model has been inspired from that paper (8DOF). For more
+information, go to that <a href="parameters.html">link</a>.
+</li>
+
+<BR><BR><BR>
+
+<li><b><font size=+1> A versatile camera calibration technique for
+high accuracy 3D machine vision metrology using off-the-shelf TV
+cameras and lenses - </font></b>R. Y. Tsai ,IEEE J. Robotics Automat. , pages
+323-344, Vol. RA-3, No. 4  1987.  <BR><BR>A seminal <a href="../papers/Tsai.pdf">paper (3.2MB)</a> on camera calibration.
+</li>
+
+<BR><BR><BR>
+
+<li><b><font size=+1>On Plane-Based Camera Calibration: A General
+Algorithm, Singularities, Applications - </font></b> Sturm and Maybank,
+CVPR99, <a href="../papers/sturm99.pdf">paper (119KB)</a>.  <BR><BR>A very
+interesting study of the singularities of calibrating based on planar
+rigs. A very similar method of estimation based on planar
+homographies.
+</li>
+
+<BR><BR><BR>
+
+<li><b><font size=+1>The Development of Camera Calibration Methods and Models - </font></b> T.A. Clarke and J.G. Fryer,
+Photogrammetric Record, 16(91): 51-66, April 1998, <a href="../papers/DevelopmentCameraCalibrationMethodsModels.pdf">paper (60KB)</a>.  <BR><BR>A remarkable paper covering the whole historical development of camera calibration techniques. An exhaustive literature survey. An amazing work that should not be missed!
+Other publications from the same authors are available on the web site of the <A href="http://www.optical-metrology-centre.com/research_papers.htm">Optical Metrology Centre</A>, a company based in the UK that offers <A href="http://www.optical-metrology-centre.com/services_camera_calibration.htm">camera calibration services</A> and sells <A href="http://www.optical-metrology-centre.com/products_camera_calibration_software.htm">camera calibration software</A>. This company is also mentioned on the <A href="links.html">links page</A>.
+</li>
+
+<BR><BR><BR>
+
+<li><b><font size=+1>Close-Range Camera Calibration -
+</font></b> D.C. Brown, Photogrammetric Engineering, pages 855-866,
+Vol. 37, No. 8, 1971.  <BR><BR>One of the first introduction of the
+camera model we use (radial + tangential distortion). A standard reference <a href="../papers/Brown71.pdf">paper (864KB)</a>.
+</li>
+
+<BR><BR><BR>
+
+<li><b><font size=+1>Lens Distortion for Close-Range Photogrammetry -
+</font></b> J.G. Fryer and D.C. Brown, Photogrammetric Engineering and Remote Sensing Vol. 52(1)
+pp 51-58, 1986.  <BR><BR>Another standard reference paper.
+</li>
+
+<BR><BR><BR>
+
+<li><b><font size=+1>Decentering Distortion of Lenses -
+</font></b> D.C. Brown, Photometric Engineering, pages 444-462,
+Vol. 32, No. 3, 1966.  <BR><BR>One of the first introduction of the
+decentering distortion model ("plumb bob" model). A standard reference paper. This distortion model is also known as the "Brown-Conrady model".
+</li>
+
+<BR><BR><BR>
+
+<li><b><font size=+1>Decentering lens systems -
+</font></b> A. Conrady, Monthly notices of the Royal Astronomical Society, Vol. 79, pages 384-390, 1919.  <BR><BR>The very first introduction of the
+decentering distortion model.
+</li>
+
+</ul>
+
+
+<BR>
+
+
+<HR>
+
+<P><FONT SIZE=+3><A HREF="../index.html#ref">Back to main calibration page</A></FONT>
+</P>
+
+
+</BODY>
+</HTML>

@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>Camera Calibration Toolbox for Matlab</TITLE>
+<!-- Changed by: Jean-Yves Bouguet, 24-Dec-1999 -->
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (X11; U; SunOS 4.1.3_U1 sun4m) [Netscape]">
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000CC" VLINK="#0000FF" ALINK="#FF0000">
+
+<CENTER>
+<BLOCKQUOTE>&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=5 WIDTH="90%" BGCOLOR="#6A9BED" NOSAVE >
+<TR NOSAVE>
+<TD NOSAVE>
+<CENTER><A NAME="links"></A><I><FONT COLOR="#000000"><FONT SIZE=+4> Camera Calibration Toolbox for Matlab</FONT></FONT></I></CENTER>
+</TD>
+</TR>
+</TABLE>
+&nbsp;</BLOCKQUOTE>
+</CENTER>
+
+
+<H1><IMG SRC="../gifs/starroll.gif" width="20" height="18"> Third calibration example - Calibration using Heikkilä's data (planar and non-planar calibration rigs)</H1>
+
+
+Similarly to the <a href="example2.html">previous example</a>, let us apply our calibration engine
+onto the data that comes with the original <a
+href="http://www.ee.oulu.fi/~jth/calibr/">calibration toolbox of
+Heikkilä from the University of Oulu</a>.  Once again. do not bother
+downloading the data from their package, we have it available to you
+right here: <a href="heikkila_data.zip"><b>heikkila_data.zip</b></a> (16Kb
+zipped). Retrieve all the files
+(<b>cademo.mat</b>,<b>demo_script_oulu_2D.m</b>,<b>demo_script_oulu_3D.m</b>)
+into a unique directory called <b>heikkila_data</b>.
+
+<ul>
+
+<li><b>Calibration with a planar rig:</b> Run the first
+matlab script file <b>demo_script_oulu_2D</b>. This script converts a
+first set of calibration data (3 images of a planar calibration rig)
+into my calibration format, runs through our main calibration engine,
+shows the results (intrinsic + extrinsic). Make sure you try the world-centered view of the extrinsic parameters (it is very informative of the 3D locations of the camera).</li>
+
+<BR><BR>
+
+<li><b>Calibration with a non-planar rig:</b> Run now the second matlab script
+file <b>demo_script_oulu_3D</b>. This script loads the second
+calibration data (one image of a non-planar calibration rig), runs through our
+main calibration engine, and shows the results (intrinsic +
+extrinsic).</li>
+
+</ul>
+
+Observe that our calibration engine also works on calibration data
+acquired with non-planar rigs.
+
+<BR>
+<BR>
+<BR>
+
+<HR>
+
+<P><FONT SIZE=+3><A HREF="../index.html#examples">Back to main calibration page</A></FONT>
+</P>
+
+
+</BODY>
+</HTML>

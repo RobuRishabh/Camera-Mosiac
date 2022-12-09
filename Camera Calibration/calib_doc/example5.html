@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>Camera Calibration Toolbox for Matlab</TITLE>
+<!-- Changed by: Jean-Yves Bouguet, 24-Dec-1999 -->
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (X11; U; SunOS 4.1.3_U1 sun4m) [Netscape]">
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000CC" VLINK="#0000FF" ALINK="#FF0000">
+
+<CENTER>
+<BLOCKQUOTE>&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=5 WIDTH="90%" BGCOLOR="#6A9BED" NOSAVE >
+<TR NOSAVE>
+<TD NOSAVE>
+<CENTER><A NAME="links"></A><I><FONT COLOR="#000000"><FONT SIZE=+4> Camera Calibration Toolbox for Matlab</FONT></FONT></I></CENTER>
+</TD>
+</TR>
+</TABLE>
+&nbsp;</BLOCKQUOTE>
+</CENTER>
+
+
+<H1><IMG SRC="../gifs/starroll.gif" width="20" height="18"> Fifth calibration
+example - Calibrating a stereo system, stereo image rectification and 3D stereo triangulation</H1>
+
+
+This example shows how to use the toolbox for calibrating a stereo system (intrinsically and extrinsically) and use the result of stereo calibration for stereo image rectification and 3D stereo triangulation. <!-- The main script functions used for that purpose are <B>calib_stereo.m</B> and <B>rectify_stereo_pair.m</B>.--> <BR><BR>
+Download the stereo data set <a href="stereo_example.zip"><b>stereo_example.zip</b></a> (853Kb zipped) consisting of 14 pairs of corresponding left and right images.
+The images are named <B>left01.jpg</B>,...,<B>left14.jpg</B> and <B>right01.jpg</B>,...,<B>right14.jpg</B>.
+The package contains the two individual calibration results files <B>Calib_Results_left.mat</B> and <B>Calib_Results_right.mat</B> produced after separately calibrating the two cameras using the standard procedure described in the <A href="example.html">first example</A>. The only difference is that after each calibration, the calibration result file <B>Calib_Results.mat</B> has been renamed to either <B>Calib_Results_left.mat</B> for the left camera or <B>Calib_Results_right.mat</B> for the right camera.
+
+<BR><BR>
+
+Run the main stereo calibration toolbox by typing <B>stereo_gui</B> in the main matlab window.
+The toolbox window should turn into:
+
+<BR><BR>
+<center><IMG SRC="../gifs/stereo_gui.gif"></center>
+<BR><BR>
+
+From within the folder containing the stereo data, click on the first button of the stereo toolbox <B>Load left and right calibration files</b>. The main matlab window will prompt you for the left and right camera calibration files:
+
+<BR><BR>
+<align="left"><IMG SRC="../gifs/stereo_name1.gif"></align>
+<BR><BR>
+
+Enter <b>Calib_Results_left.mat</B> for the left camera calibration result file name:
+
+<BR><BR>
+<align="left"><IMG SRC="../gifs/stereo_name2.gif"></align>
+<BR><BR>
+
+Enter <b>Calib_Results_right.mat</B> for the right camera calibration result file name:
+
+<BR><BR>
+<align="left"><IMG SRC="../gifs/stereo_name3.gif"></align>
+<BR><BR>
+
+The initial values for the intrinsic camera parameters are shown in addition to an estimate for the extrinsic parameters <B>om</B> and <B>T</B> characterizing the relative location of the right camera with respect to the left camera. The intrinsic parameters <B>fc_left</B>, <B>cc_left</B>, <B>alpha_c_left</B>, <B>kc_left</B>, <B>fc_right</B>, <B>cc_right</B>, <B>alpha_c_right</B> and <B>kc_right</B> are equivalent to the traditional parameters <B>fc</B>, <B>cc</B>, <B>alpha_c</B> and <B>kc</B> defined on the <A href="parameters.html">parameter description page</a>. The two pose parameters <B>om</B> and <B>T</B> are defined such that if we consider a point <B>P</B> in 3D space, its two coordinate vectors <B>X<SUB>L</SUB></b> and <B>X<SUB>R</SUB></B> in the left and right camera reference frames respectively are related to each other through the rigid motion transformation <B>X<SUB>R</SUB> = R * X<SUB>L</SUB> + T</B>, where <B>R</B> is the 3x3 rotation matrix corresponding to the rotation vector <B>om</B>. The relation between <B>om</B> and <B>R</B> is given by the rodrigues formula <b>R = rodrigues(om)</B>.
+<BR>
+<BR>
+Run the global stereo optimization procedure by clicking on the button <B>Run stereo calibration</B> in the stereo toolbox.
+
+<BR><BR>
+<align="left"><IMG SRC="../gifs/stereo_optim.gif"></align>
+<BR><BR>
+
+Observe that all intrinsic and extrinsic parameters have been recomputed, together with all the uncertainties so as to minimize the reprojection errors on both camera for all calibration grid locations. You may observe that the uncertainties on the intrinsic parameters (especially that of the focal values) for both cameras are smaller after stereo calibration. This is due to the fact that the global stereo optimization is performed over a minimal set of unknown parameters. In particular, only one pose unknown (6 DOF) is considered for the location of the calibration grid for each stereo pair. This insures global rigidity of the structure going from left view to right view. <BR> By default, the stereo optimization will recompute the intrinsic parameters for both left and right cameras. However, it may sometime be desirable to not re-optimize over the left and/or right camera intrinsic parameters and keep those previously estimated. In this case, the user may set <B>recompute_intrinsic_left</B> and/or <B>recompute_intrinsic_right</B> to zero prior to running stereo calibration. For more information type in your main matlab window <B>help go_calib_stereo</B>.
+<BR><BR>
+
+
+In order to save the stereo calibration results in the file <B>Calib_Results_stereo.mat</B>, click on <B>Save stereo calib results</B> in the stereo toolbox.
+
+<BR><BR>
+<align="left"><IMG SRC="../gifs/stereo_saving.gif"></align>
+<BR><BR>
+
+The spatial configuration of the two cameras and the calibration planes may be displayed in a form of a 3D plot by clicking on the button <B>Show Extrinsics of the stereo rig</B> in the stereo toolbox.
+
+<BR><BR>
+<center><IMG SRC="../gifs/ext_stereo.gif"></center>
+<BR><BR>
+
+Finally, rectify the stereo images used for calibration by clicking on <B>Rectify the calibration images</B>. All 14 pairs of images are then stereo rectified (with epipolar lines matching with the horizontal scanned lines) under <B>left_rectified01.bmp</B>, <B>right_rectified01.bmp</B>,...,<B>left_rectified14.bmp</B>,<B>right_rectified14.bmp</B>.
+In addition to generating the rectified images, the script also saves the new set of calibration parameters under <B>Calib_Results_stereo_rectified.mat</B> (valid only for the rectified images).
+
+<BR><BR>
+<align="left"><IMG SRC="../gifs/stereo_rectify.gif"></align><BR>
+<FONT size="+2"><B>...</B></FONT><BR><BR>
+<align="left"><IMG SRC="../gifs/stereo_rectify2.gif"></align>
+<BR><BR>
+
+<BR>
+
+Since the original left and right images are provided, the two initial independent calibrations leading to the two result files <B>Calib_Results_left.mat</B>  and <B>Calib_Results_right.mat</B> may also be done. Going through the corner extraction process, it is very important to keep in mind that for each pair, the same set of points must be selected in the left and right images. This means same grid of points and same origin point (to guarantee identical pattern reference frame). Therefore, it is crucial to make sure that the same origin point (first click) is consistently selected throughout. One simple technique is to always select the upper left corner of the grid as origin (this was done to generate the two provided calibration files). In your own stereo calibration, you may use a different strategy, such as marking the origin point on the grid pattern itself. For more information on the clicking rule for grid point selection, refer to the <A href="example.html">first calibration example</A>.
+Some additional information needed to complete the individual calibrations: the size of the squares in the grid is <B>dX=dY=30mm</B> and the window size parameters may be set to <B>wintx=winty=7</B> for all images. After each calibration, remember to save the calibration results by clicking on <B>Save</B> and rename the file <B>Calib_Results.mat</B> to either <B>Calib_Results_left.mat</B> or <B>Calib_Results_right.mat</B>.
+
+<BR><BR>
+The toolbox also includes a function <B>stereo_triangulation.m</B> that computes the 3D location of a set of points given their left and right image projections. This process is known as stereo triangulation. 
+To learn about the syntax of the function type <B>help stereo_triangulation</B> in the main Matlab window.
+As an exercise, let's apply the triangulation function on a simple example: let's re-compute the 3D location of the grids points extracted on the first image pair <B>{left01.jpg, right01.jpg}</B>. After running through the complete stereo calibration example, the image projections of the grid points on the right and left images are available in the variables <B>x_left_1</b> and <B>x_right_1</B>. In order to triangulate those points in space, invoke <B>stereo_triangulation.m</B> by inputting <B>x_left_1</b>,<B>x_right_1</B>, the extrinsic stereo parameters <B>om</B> and <B>T</B> and the left and right camera intrinsic parameters:
+<BR><BR>
+<B>[Xc_1_left,Xc_1_right] = stereo_triangulation(x_left_1,x_right_1,om,T,fc_left,cc_left,kc_left,alpha_c_left,fc_right,cc_right,kc_right,alpha_c_right);</B>
+<BR><BR>
+The output variables <B>Xc_1_left</B> and <B>Xc_1_right</B> are the 3D coordinates of the points in the left and right camera reference frames respectively (observe that <B>Xc_1_left</B> and <B>Xc_1_right</B> are related to each other through the rigid motion equation <B>Xc_1_right = R * Xc_1_left + T </B>). It may be interesting to see that one can then re-compute the "intrinsic" geometry of the calibration grid from the triangulated structure <B>Xc_1_left</B> by undoing the left camera location encoded by <B>Rc_left_1</B> and <B>Tc_left_1</B>:
+<BR><BR><B>
+X_left_approx_1 = Rc_left_1' * (Xc_1_left - repmat(Tc_left_1,[1 size(Xc_1_left,2)]));
+</B></BR><BR>
+The output variable <B>X_left_approx_1</B> is then an approximation of the original 3D structure of the calibration grid stored in <B>X_left_1</B>. How well do they match?
+<!-- <BR><BR>
+Future generations of <B>calib_stereo.m</B> will handle the general case of the joint calibration of N cameras where N can be larger than 2. Stay tuned... -->
+
+<br><br><br><br><h2>What about calibrating more than 2 cameras?</h2>If you are interested in calibrating jointly a set of N cameras where N is larger than 2, you may be interested in 
+the <a href="http://cmp.felk.cvut.cz/~svoboda/SelfCal/index.html">Multi-Camera Self-Calibration Toolbox</A> distributed by 
+<a 
+href="http://cmp.felk.cvut.cz/~svoboda/">Tomas Svoboda</a> 
+from the <a href="http://cmp.felk.cvut.cz/">Center for Machine Perception</a> of the <a href="http://www.cvut.cz/cz/">Czech Technical University</a>.
+This is a very nice and intuitive Matlab toolbox that includes our camera calibration toolbox.
+
+
+
+
+
+<BR>
+<BR>
+<BR>
+
+<HR>
+
+<P><FONT SIZE=+3><A HREF="../index.html#examples">Back to main calibration page</A></FONT>
+</P>
+
+
+</BODY>
+</HTML>
