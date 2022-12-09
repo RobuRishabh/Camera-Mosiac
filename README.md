@@ -19,7 +19,7 @@ The magnitude of tangential distortion coefficients is smaller than the radial d
 
 # 1.2 Reprojection Error
 <img src="Final Results\Camera Calibration\Calibration.png" width=2000px>
-<img src="Final Results\Camera Calibration\Reprojection Error.png" width=2000px>
+<img src="Final Results\Camera Calibration\Reprojection Error.png" width=1500px>
 
    Extrinsic Parameter - Camera Centered      |      Extrinsic Parameter - World Centered        |
 :-------------------------:|:------------------------:|
